@@ -45,6 +45,7 @@ function ajouter(){
   }
 }
 
+
 // Nouvelle fonction pour ajouter les données dans un tableau
 function adArray(){
   // Variable qui prend la valeur de la donnée utilisateur
@@ -52,9 +53,12 @@ function adArray(){
 
     if (texte != null){ // si l'entrée n'est pas vide
       tab.push(texte);// Alors ajoute la au tableau Tab
+      tab.sort(function(a, b){return a-b;});
       // et affiche la dans l'id "Afficher" de la page HTML
-      document.getElementById("afficher").innerHTML +=" "+texte+",";
+      // document.getElementById("afficher").innerHTML +=" "+texte+",";
+      document.getElementById("afficher").innerHTML = tab.join(", ");
     }
+
 // Afficher la taille du tableau, le nombre d'entrée dans le tableau
 document.getElementById("taille").innerHTML = tab.length;
 }
